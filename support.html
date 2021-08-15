@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px; 
+            color: #fff;
+            margin: 5px;
+            transform: rotate(15deg);
+            background: tomato;
+        }
+        @supports (transform: rotate(45deg)) {
+            .box {
+                background: blueviolet;
+            }
+            .box.one {
+                transform: rotate(15deg);
+            }
+            .box.two {
+                transform: rotate(30deg);
+            }
+            .box.three {
+                transform: rotate(45deg);
+            }
+            .box.four {
+                transform: rotate(60deg);
+            }
+        }
+        @supports not (transform: rotate(45deg)) {
+            .box {
+                background: red;
+            }
+        }
+        @supports selector(A > B){
+            .container > .box {background:#000;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            BOX
+        </div>
+        <div class="box one">
+            BOX
+        </div>
+        <div class="box two">
+            BOX
+        </div>
+        <div class="box three">
+            BOX
+        </div>
+        <div class="box four">
+            BOX
+        </div>
+    </div>
+</body>
+</html>
