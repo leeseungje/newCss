@@ -72,7 +72,39 @@ scroll-margin: npx;
 - [테스트 코드](https://github.com/leeseungje/newCss/blob/main/scroll-snap.html)
 
 ## :is pseudo selector
-- 편의한 다수 선택자
+```css
+:is(header, main, footer) p:hover {
+    property-name: property-value
+}
+
+/*  */
+header p:hover,
+main p:hover,
+footer p:hover {
+  color: red;
+  cursor: pointer;
+}
+```
+- 가상 클래스의 함수 다수 선택자
+- is도 있지만 `where` 비슷한 기능이 있다.
+- [css selectors level4](https://css4-selectors.com/selectors/)
+### is(Matches-any pseudo-class) 모든 유사 클래스와 일치
+- `:is`내부의 선택자는 전체 선택자의 특이성에 포함되어 다른 클래스 요소 선택자보다 더 높은 특이성을 가지고 있다.
+### where(Matches-any pseudo-class) 특이성 조정 의사 클래스
+- 반대로 `:where`는 내부의 선택자 특이성이 0이라 간단한 선택에 무시 된다.
+```css
+:is(header.is, main.is, footer.is) h1 {
+    color: #fff;
+}
+:where(header.where, main.where, footer.where) h1 {
+    color: blue;
+}
+footer h1 { /* is는 반영 되지 않고 where속성만 먹는다. */
+    color: orange;
+}
+```
+- [지원 브라우저](https://caniuse.com/?search=%3Ais)
+- [테스트 코드](https://github.com/leeseungje/newCss/blob/main/is.html)
 
 ## flex box gap
 - flex layout 간격을 margin이 아닌 gap 프로퍼티를 주는 기능

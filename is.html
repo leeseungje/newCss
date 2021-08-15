@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            height: 50vh;
+        }
+        header {
+            background: rosybrown;
+            height: 5vh;
+        }
+        main {
+            background: royalblue;
+            height: 40vh;
+        }
+        footer {
+            background: blueviolet;
+            height: 5vh;
+        }
+        :is(.wrapper) header, footer, main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        :is(header.is, main.is, footer.is) h1 {
+            color: #fff;
+        }
+        :where(header.where, main.where, footer.where) h1 {
+            color: blue;
+        }
+        footer h1 {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="is">
+            <h1>header<h1>
+        </header>
+        <main class="is">
+            <h1>main</h1>
+        </main>
+        <footer class="is">
+            <h1>footer</h1>
+        </footer>
+    </div>
+    <div class="wrapper">
+        <header class="where">
+            <h1>header<h1>
+        </header>
+        <main class="where">
+            <h1>main</h1>
+        </main>
+        <footer class="where">
+            <h1>footer</h1>
+        </footer>
+    </div>
+</body>
+</html>
