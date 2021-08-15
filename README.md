@@ -53,6 +53,8 @@ scroll-snap-align: center; /* snap position을 가운에 정렬 */
 scroll-snap-align: end; /* snap position을 끝 부분에 정렬 */
 ```
 - snap 포지션이 area안에서 원하는 정렬로 설정이 가능함.
+![scroll-snap-align 위치 - 출처: https://wit.nts-corp.com/2018/08/28/5317](https://github.com/leeseungje/newCss/blob/main/img/snap-position.gif "scroll-snap-align 위치 - 출처: https://wit.nts-corp.com/2018/08/28/5317")
+
 ### scroll-padding
 ```css
 scroll-padding: npx;
