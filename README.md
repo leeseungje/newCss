@@ -29,7 +29,8 @@
     }
 }
 ```
-- (지원 브라우저)[https://caniuse.com/?search=%40supports]
+- [지원 브라우저](https://caniuse.com/?search=%40supports)
+- [테스트 코드]()
 
 
 ## css scroll snap
