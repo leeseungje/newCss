@@ -30,7 +30,7 @@
 }
 ```
 - [지원 브라우저](https://caniuse.com/?search=%40supports)
-- [테스트 코드]()
+- [테스트 코드](https://github.com/leeseungje/newCss/blob/main/support.html)
 
 
 ## css scroll snap
