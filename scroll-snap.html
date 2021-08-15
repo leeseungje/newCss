@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .snap-container,
+        section {
+            width: 100vw;
+            height: 100vh;
+        }
+        .snap-container {
+            display: overlay;
+            overflow: auto;
+            scroll-snap-type: y mandatory;
+            scroll-padding: 50px;
+        }
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: #fff;
+            scroll-snap-align: start;
+        }
+        section:nth-child(1) {
+            background: brown;
+        }
+        section:nth-child(2) {
+            background: orange;
+            scroll-margin: 300px;
+        }
+        section:nth-child(3) {
+            background: orchid;
+        }
+        section:nth-child(4) {
+            background: greenyellow;
+        }
+        section:nth-child(5) {
+            background: wheat;
+        }
+        section:nth-child(6) {
+            background: rosybrown;
+        }
+    </style>
+</head>
+<body>
+    <div class="snap-container">
+        <section>SECTION 1</section>
+        <section>SECTION 2</section>
+        <section>SECTION 3</section>
+        <section>SECTION 4</section>
+        <section>SECTION 5</section>
+        <section>SECTION 6</section>
+    </div>
+</body>
+</html>
