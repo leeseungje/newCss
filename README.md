@@ -132,7 +132,65 @@ footer h1 { /* is는 반영 되지 않고 where속성만 먹는다. */
 - [테스트 코드](https://github.com/leeseungje/newCss/blob/main/gap.html)
 
 ## aspect-ratio
-- 사이트에서 영상 혹은 이미지를 보여줄때 정해진 비율을 유지하고 싶을때 쓰는 기능
+```css
+.element {
+  aspect-ratio: 2 / 1; /* ↔️ is double the ↕️ */
+}
+
+.element {
+  aspect-ratio: 1 / 1; /* ⏹ a perfect square */
+}
+```
+- 반응형 사이트에서 영상 혹은 이미지를 보여줄때 정해진 비율을 유지하고 싶을때 쓰는 기능
+- padding, calc로 속성을 넣을 수 있지만 수학적인 계산법 때문에 시간이 많이 요소가 됨
+```css
+.ratio {
+    overflow: hidden;
+    position: relative;
+    height: 0;
+}
+.ratio.padding {
+    padding-top: 56.25%; /* 16:9 */
+}
+.ratio.calc {
+    padding-top:  calc(591.44  /  1127.34  *  100%); /* 16:9 */
+}
+.ratio.ratio {
+    aspect-ratio: 16 / 9; /* 16:9 */
+}
+img {
+    position: absolute; /* padding, calc 일때만 사용 */
+    left: 0; /* padding, calc 일때만 사용 */
+    top: 0; /* padding, calc 일때만 사용 */
+    width: 100%;
+    height: 100%;
+}
+```
+- media query 로도 활용이 가능하다.
+```css
+/* Minimum aspect ratio */
+@media (min-aspect-ratio: 8/5) {
+  div {
+    background: #9af; /* blue */
+  }
+}
+
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 3/2) {
+  div {
+    background: #9ff;  /* cyan */
+  }
+}
+
+/* Exact aspect ratio, put it at the bottom to avoid override*/
+@media (aspect-ratio: 1/1) {
+  div {
+    background: #f9a; /* red */
+  }
+}
+```
+- [지원 브라우저](https://caniuse.com/?search=aspect-ratio)
+- [테스트 코드](https://github.com/leeseungje/newCss/blob/main/aspect-ratio.html)
 
 ## :sticky
 - 해당 엘레먼트를 사용하면 정의된 높이의 부모 div에 고정이 되는 기능
