@@ -29,6 +29,7 @@
     }
 }
 ```
+- [예제](https://jsfiddle.net/myubbak/cg0r6m45/3/)
 - [지원 브라우저](https://caniuse.com/?search=%40supports)
 - [테스트 코드](https://github.com/leeseungje/newCss/blob/main/support.html)
 
@@ -68,6 +69,7 @@ scroll-margin: npx;
 - 자식 영역에 속성을 넣으며 scroll-padding속성과 비슷하지만 개별 section에 따로따로 속성을 부여할 수 있다.
 - 안에 contents 내용과 padding 영향을 미치지 않음
 
+- [예제](https://jsfiddle.net/myubbak/9vmokbta/2/)
 - [지원 브라우저-scroll-snap-type](https://caniuse.com/?search=scroll-snap-type), [지원 브라우저-scroll-snap-type](https://caniuse.com/?search=scroll-snap-align)
 - [테스트 코드](https://github.com/leeseungje/newCss/blob/main/scroll-snap.html)
 
@@ -103,6 +105,7 @@ footer h1 { /* is는 반영 되지 않고 where속성만 먹는다. */
     color: orange;
 }
 ```
+- [예제](https://jsfiddle.net/myubbak/k43tvnm7/4/)
 - [지원 브라우저](https://caniuse.com/?search=%3Ais)
 - [테스트 코드](https://github.com/leeseungje/newCss/blob/main/is.html)
 
@@ -128,6 +131,7 @@ footer h1 { /* is는 반영 되지 않고 where속성만 먹는다. */
 - margin은 존재 여부와 상관 없이 항상 스타일이 사용 된다면 gap은 인접한 요소가 없으면 불필요한 공간을 만들지 않는다.
 - gap의 요소는 부모에 속성을 부여하며 상하, 좌우 까지 속성값을 입력 할 수 있다.
 
+- [예제](https://jsfiddle.net/myubbak/2p3qnyhs/1/)
 - [지원 브라우저](https://caniuse.com/?search=gap)
 - [테스트 코드](https://github.com/leeseungje/newCss/blob/main/gap.html)
 
@@ -189,8 +193,44 @@ img {
   }
 }
 ```
+- [예제](https://jsfiddle.net/myubbak/f1xutobL/7/)
 - [지원 브라우저](https://caniuse.com/?search=aspect-ratio)
 - [테스트 코드](https://github.com/leeseungje/newCss/blob/main/aspect-ratio.html)
 
 ## :sticky
-- 해당 엘레먼트를 사용하면 정의된 높이의 부모 div에 고정이 되는 기능
+```css
+html, body {
+    margin: 0;
+    padding: 0;
+    display: overlay;
+}
+.parent {
+    width: 100%;
+    height: 200vh;
+    border: 10px solid saddlebrown;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+}
+header {
+    position: -webkit-sticky; /* 사파리 브라우저 지원 */
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 100px;
+    background: royalblue;
+    color: #fff;
+}
+header.second {
+    background: orchid;
+}
+```
+- 해당 엘레먼트를 사용하면 스크롤 위치가 임계점에 이르면 fixed와 같이 박스를 화면에 고정할 수 있는 속성
+- fixed는 뷰포트에 고정이지만 sticky박스는 scroll박스에 고정.
+- `top`,`left`,`bottom`,`right` 속성이 필수
+- 현재 목표그룹 테이블에서 사용 중
+
+- [예제](https://jsfiddle.net/myubbak/8bd1oeua/2/)
+- [지원 브라우저](https://caniuse.com/?search=sticky)
+- [테스트 코드](https://github.com/leeseungje/newCss/blob/main/sticky.html)
+
+# 끝
