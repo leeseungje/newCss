@@ -107,7 +107,29 @@ footer h1 { /* is는 반영 되지 않고 where속성만 먹는다. */
 - [테스트 코드](https://github.com/leeseungje/newCss/blob/main/is.html)
 
 ## flex box gap
+```css
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+.children {
+    width: 180px;
+    height: 180px;
+    background: orchid;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+}
+```
 - flex layout 간격을 margin이 아닌 gap 프로퍼티를 주는 기능
+- margin은 존재 여부와 상관 없이 항상 스타일이 사용 된다면 gap은 인접한 요소가 없으면 불필요한 공간을 만들지 않는다.
+- gap의 요소는 부모에 속성을 부여하며 상하, 좌우 까지 속성값을 입력 할 수 있다.
+
+- [지원 브라우저](https://caniuse.com/?search=gap)
+- [테스트 코드](https://github.com/leeseungje/newCss/blob/main/gap.html)
 
 ## aspect-ratio
 - 사이트에서 영상 혹은 이미지를 보여줄때 정해진 비율을 유지하고 싶을때 쓰는 기능
