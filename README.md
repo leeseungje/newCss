@@ -2,6 +2,11 @@
 
 ### 목차
 [1. @supports](#supports)
+[2. css scroll snap](#css-scroll-snap)
+[3. :is pseudo selector](#is-pseudo-selector)
+[4. flex box gap](#flex-box-gap)
+[5. aspect-ratio](#aspect-ratio)
+[6. :sticky](#sticky)
 
 ## @supports
 - 브라우저가 해당 css를 지원하는지 여부를 확인 해 주는 기능.
